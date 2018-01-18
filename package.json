@@ -1,0 +1,38 @@
+{
+  "name": "acomspa",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "daggy": "^1.2.0",
+    "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.6.0",
+    "ramda": "^0.25.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-form": "^7.1.2",
+    "redux-observable": "^0.17.0",
+    "rxjs": "^5.5.2",
+    "serve": "^6.4.1",
+    "socket.io-client": "^2.0.4",
+    "tachyons": "^4.9.0",
+    "tachyons-cli": "^1.2.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "now-start": "serve --single ./build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "css": "tachyons src/css/app.css > src/index.css --minify",
+    "prestart": "npm run css",
+    "prebuild": "npm run css"
+  }
+}
