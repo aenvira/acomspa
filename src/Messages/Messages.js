@@ -71,7 +71,7 @@ class Messages extends React.Component {
 
   confirmMessage = res => {
     if(res.error) return console.log(res.error)
-    console.log(res)
+    console.log('Message confirmed!', res)
   }
 
   switchViewToChannels = () => {

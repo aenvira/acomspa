@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux'
 import Channels from '../Channels/Channels'
 import Messages from '../Messages/Messages'
 import ProfileBar from '../Profile/ProfileBar'
-
+import Account from '../Account/Account'
 import Contacts from '../Contacts/Contacts'
 import AddContact from '../Contacts/AddContact'
 import AddChannel from '../Channels/AddChannel'
@@ -36,9 +36,9 @@ class Main extends React.Component {
         <div className={`${displayChannels} mw6-l db-l mnw-450-l h-100`}>
           <div className={`flex flex-column h-100`}>
             <ProfileBar user={currentUser}/>
+            <Route path='/chat/account' component={Account}/> 
             <Route exact path='/chat/channels/add' component={AddChannel}/>
             <Route exact path='/chat' component={Channels}/>
-             
             <Route exact path='/chat/contacts/add' component={AddContact}/>
             <Route exact path='/chat/contacts' component={Contacts}/> 
           </div>

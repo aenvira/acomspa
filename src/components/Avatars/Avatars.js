@@ -1,5 +1,25 @@
 import React from 'react'
-import defaultAvatar from '../../images/default_avatar.png'
+import whiteAvatar from '../../images/white_avatar.png'
+import orangeAvatar from '../../images/orange_avatar.png'
+import yellowAvatar from '../../images/yellow_avatar.png'
+import limeAvatar from '../../images/lime_avatar.png'
+import blueAvatar from '../../images/blue_avatar.png'
+
+const defaultAvatars = [
+  whiteAvatar,
+  orangeAvatar,
+  yellowAvatar,
+  limeAvatar,
+  blueAvatar
+]
+
+
+const getRandomAvatar = (avatars) => {
+  const rand = Math.floor(Math.random() * (avatars.length))
+  console.log('rand', rand)
+  return avatars[rand]
+}
+//const getRandomAvatar = (avatars) => avatars[1]
 
 const getScreenName = user => {
   return user.username
@@ -37,7 +57,7 @@ export const Avatar = props => {
         }}
         alt={ getScreenName(user) }
         title={ getScreenName(user) }
-        src={ user.avatar ? `${user.avatar}` : `${defaultAvatar}` }
+        src={ user.avatar ? `${user.avatar}` : `${getRandomAvatar(defaultAvatars)}` }
       />
       {
         withStatus ? <StatusPill status={false}/> : ''

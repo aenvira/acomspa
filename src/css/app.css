@@ -2,6 +2,7 @@
 @import './font-awesome.min.css';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import './messages.css';
+@import './avatar.css';
 @import './main.css';
 
 html, body, div, span, applet, object, iframe,

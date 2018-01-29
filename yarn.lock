@@ -952,7 +952,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.25.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -2279,6 +2279,23 @@ elliptic@^6.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
+
+emoji-datasource@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/emoji-datasource/-/emoji-datasource-4.0.0.tgz#3fc9c0c2f4fb321d9291138819f6d100603d3e2f"
+
+emoji-js@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/emoji-js/-/emoji-js-3.4.0.tgz#dabdeda60c92d1948a5177e51ba9421d2029b052"
+  dependencies:
+    emoji-datasource "4.0.0"
+
+emoji-picker-react@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/emoji-picker-react/-/emoji-picker-react-2.0.2.tgz#eaee6ee602c742f3c289e9dd1a73d38ac17dde15"
+  dependencies:
+    babel-runtime "^6.25.0"
+    throttle-debounce "^1.0.1"
 
 emoji-regex@^6.1.0:
   version "6.5.1"
@@ -5846,6 +5863,10 @@ react-dom@^16.1.1:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-emojione@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-emojione/-/react-emojione-5.0.0.tgz#230fef5e85aa9e1183b9506a15fff37d59ef472f"
+
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
@@ -6975,6 +6996,10 @@ text-table@0.2.0, text-table@~0.2.0:
 throat@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-3.2.0.tgz#50cb0670edbc40237b9e347d7e1f88e4620af836"
+
+throttle-debounce@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-1.0.1.tgz#dad0fe130f9daf3719fdea33dc36a8e6ba7f30b5"
 
 through@^2.3.6:
   version "2.3.8"
