@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { 
+import {
   Route
 } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
@@ -18,11 +18,13 @@ import {
 class Main extends React.Component {
   componentWillMount() {
     const { requestChannels } = this.props.actions
+
     requestChannels()
   }
 
   componentWillUnmount() {
     const { socket } = this.props
+
     socket.disconnect()
   }
 
@@ -31,22 +33,22 @@ class Main extends React.Component {
 
     const displayMessages = messagesInView ? 'db flex-auto' : 'dn'
     const displayChannels = channelsInView ? 'db flex-auto' : 'dn'
+
     return (
       <div className='flex flex-auto w-100 h-100'>
         <div className={`${displayChannels} mw6-l db-l mnw-450-l h-100`}>
-          <div className={`flex flex-column h-100`}>
+          <div className={'flex flex-column h-100'}>
             <ProfileBar user={currentUser}/>
-            <Route path='/chat/account' component={Account}/> 
+            <Route path='/chat/account' component={Account}/>
             <Route exact path='/chat/channels/add' component={AddChannel}/>
             <Route exact path='/chat' component={Channels}/>
             <Route exact path='/chat/contacts/add' component={AddContact}/>
-            <Route exact path='/chat/contacts' component={Contacts}/> 
+            <Route exact path='/chat/contacts' component={Contacts}/>
           </div>
         </div>
-          <div className={`${displayMessages} db-l flex-auto`}>
-            <Messages channel={selectedChannel} />
-          </div>
-
+        <div className={`${displayMessages} db-l flex-auto`}>
+          <Messages channel={selectedChannel} />
+        </div>
       </div>
     )
   }

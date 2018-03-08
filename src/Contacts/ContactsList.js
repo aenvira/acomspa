@@ -8,10 +8,10 @@ const ContactsList = props => {
   return (
     <div className='bg-light-gray'>
       <ul className='list pl0 mt0 measure center'>
-        { 
-          contacts && contacts.map((contact, i) => 
-            <ContactsListItem key={i} contact={contact} onClick={e => onItemClick(contact)}/>
-          ) 
+        {
+          contacts && contacts.map((contact, i) =>
+            <ContactsListItem key={i} contact={contact} onClick={_ => onItemClick(contact)}/>
+          )
         }
       </ul>
     </div>

@@ -23,11 +23,13 @@ class StartPage extends React.Component {
 
   componentDidMount() {
     const { isAppOnline } = this.props.actions
+
     isAppOnline()
   }
 
   render() {
     const { isOnline } = this.props
+
     return (
       <div className='flex justify-center h-100 items-center'>
         {
@@ -44,6 +46,6 @@ class StartPage extends React.Component {
 }
 
 export default connect(
-   s => ({ isOnline: s.isOnline }),
-   dispatch => ({ actions: bindActionCreators({ isAppOnline }, dispatch) })
+  s => ({ isOnline: s.isOnline }),
+  dispatch => ({ actions: bindActionCreators({ isAppOnline }, dispatch) })
 )(StartPage)

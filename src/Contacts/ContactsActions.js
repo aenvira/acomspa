@@ -16,47 +16,47 @@ export const USERS_SUCCESS = 'USERS_SUCCESS'
 export const addContact = contact => ({ type: ADD_CONTACT_REQ, payload: contact })
 export const addContactEpic = action$ =>
   action$.ofType(ADD_CONTACT_REQ)
-    .mergeMap(action => 
+    .mergeMap(action =>
       addToContacts(action.payload)
-      .map(res => ({
-        type: ADD_CONTACT_SUCCESS,
-        payload: res
-      }))
-      .catch(error => Observable.of({
-        type: ADD_CONTACT_FAILED,
-        payload: error,
-        error: true
-      }))
+        .map(res => ({
+          type: ADD_CONTACT_SUCCESS,
+          payload: res
+        }))
+        .catch(error => Observable.of({
+          type: ADD_CONTACT_FAILED,
+          payload: error,
+          error: true
+        }))
     )
 
 export const requestContacts = user => ({ type: FETCH_CONTACTS_REQ, payload: user })
-export const fetchContactsEpic = action$ => 
+export const fetchContactsEpic = action$ =>
   action$.ofType(FETCH_CONTACTS_REQ)
-    .mergeMap(action => 
+    .mergeMap(action =>
       fetchMyContacts(action.payload)
-        .map(res => ({ 
+        .map(res => ({
           type: FETCH_CONTACTS_SUCCESS,
           payload: res
         }))
-      .catch(error => Observable.of({
-        type: FETCH_CONTACTS_FAILED,
-        payload: error,
-        error: true
-      }))
+        .catch(error => Observable.of({
+          type: FETCH_CONTACTS_FAILED,
+          payload: error,
+          error: true
+        }))
     )
 
 export const requestUsers = () => ({ type: USERS_REQ })
-export const requestUsersEpic = action$ => 
+export const requestUsersEpic = action$ =>
   action$.ofType(USERS_REQ)
-    .mergeMap(action => 
+    .mergeMap(action =>
       getUsers()
-      .map(res => ({
-        type: USERS_SUCCESS,
-        payload: res
-      }))
-      .catch(error => Observable.of({
-        type: USERS_FAILED,
-        payload: error,
-        error: true
-      }))
+        .map(res => ({
+          type: USERS_SUCCESS,
+          payload: res
+        }))
+        .catch(error => Observable.of({
+          type: USERS_FAILED,
+          payload: error,
+          error: true
+        }))
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 const noop = () => {}
 
-const defaultStyles =   {
+const defaultStyles = {
   border: 'none',
   outline: 0,
   boxShadow: 'none'
@@ -21,7 +21,7 @@ export const Button = ({
       onClick={onClick}
       type={type}
       className={`pointer ${className}`}
-      style={{...defaultStyles, ...style}}
+      style={{ ...defaultStyles, ...style }}
     >
       { children }
     </button>
@@ -64,7 +64,7 @@ export const TextButton = props =>
     { props.children }
   </Button>
 
-export const IconButton = props => 
+export const IconButton = props =>
   <Button {...props}
     className={`bg-moon-gray dim ${props.className}`}
   >

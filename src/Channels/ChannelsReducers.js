@@ -1,4 +1,4 @@
-//import Data from '../utils/types'
+// import Data from '../utils/types'
 
 import {
   CHANNELS_REQ,
@@ -22,7 +22,7 @@ export const channels = (state = [], { type, payload }) => {
     case INITIAL_CHANNELS_SUCCESS:
       return payload.channels
     case UPDATE_CHANNELS_SUCCESS:
-      return [...state, payload.channel]
+      return [ ...state, payload.channel ]
     default:
       return state
   }
@@ -41,20 +41,20 @@ export const channelsSocket = (state = {}, { type, payload }) => {
   }
 }
 
-export const latestMessages = (state = {},  { type, payload }) => {
+export const latestMessages = (state = {}, { type, payload }) => {
   switch (type) {
     case NEW_MESSAGE_FAILED:
       return state
     case NEW_MESSAGE_RECEIVED:
       return { ...state, [payload.channelId]: { message: payload.message, read: false } }
     case RESET_UNREAD_MESSAGE:
-      return { ...state, [payload.channelId]: { ...state[payload.channelId], read: true }}
+      return { ...state, [payload.channelId]: { ...state[payload.channelId], read: true } }
     default:
       return state
   }
 }
 
-export const selectedChannel = (state = {},  { type, payload }) => {
+export const selectedChannel = (state = {}, { type, payload }) => {
   switch (type) {
     case SET_CHANNEL:
       return payload

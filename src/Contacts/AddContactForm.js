@@ -15,10 +15,10 @@ const AddContactForm = props => {
           name='contact'
           component='select'
         >
-        <option/>
-        {
-          users.map((u, i) => <option key={i} value={u._id}>{ u.username }</option>)
-        }
+          <option/>
+          {
+            users.map((u, i) => <option key={i} value={u._id}>{ u.username }</option>)
+          }
         </Field>
       </div>
 

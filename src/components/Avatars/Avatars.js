@@ -16,10 +16,9 @@ const defaultAvatars = [
 
 const getRandomAvatar = (avatars) => {
   const rand = Math.floor(Math.random() * (avatars.length))
-  console.log('rand', rand)
+
   return avatars[rand]
 }
-//const getRandomAvatar = (avatars) => avatars[1]
 
 const getScreenName = user => {
   return user.username

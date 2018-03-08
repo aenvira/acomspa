@@ -11,7 +11,7 @@ const ContactsListItem = props => {
   }
 
   const config = {
-    withStatus:  false,
+    withStatus: false,
     onClick: onClick
   }
   

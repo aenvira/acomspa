@@ -2,13 +2,13 @@ import React from 'react'
 import { Avatar } from '../components/Avatars/Avatars'
 import { RoundIconButton, IconOnlyButton } from '../components/Buttons/Buttons'
 
-const getOtherParticipant = (channel, user) => 
+const getOtherParticipant = (channel, user) =>
   channel.participants.filter(p => p._id !== user._id)[0]
 
 const ProfileBar = props => {
   const { channel, currentUser, switchToChannels, channelsInView } = props
-  console.log(channel)
   const backArrow = channelsInView ? 'dn' : 'db dn-l'
+
   return (
     <div className='flex justify-between pa2 bg-light-gray'>
       <div className='flex items-center'>
@@ -21,8 +21,8 @@ const ProfileBar = props => {
           <div className='flex ph3 pt2 f7 dark-gray'>
             {
               channel.isPrivate
-              ? ''
-              : channel.participants 
+                ? ''
+                : channel.participants
               && channel.participants
                 .map(p => <div key={p._id} className='pr1'>{ p.username }</div>)
             }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { 
+import {
   Route
 } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -8,8 +8,9 @@ import EditProfile from '../Profile/EditProfile'
 
 class Account extends React.Component {
 
-  render () {
+  render() {
     const { currentUser } = this.props
+
     return (
       <div>
         <Route exact path='/chat/account' render={props => <AccountSettings user={currentUser}/>}/>

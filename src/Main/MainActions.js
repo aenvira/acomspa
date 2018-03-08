@@ -1,4 +1,4 @@
-//import { Observable } from 'rxjs'
+// import { Observable } from 'rxjs'
 
 export const TOGGLE_CHANNELS_IN_VIEW = 'TOGGLE_CHANNELS_IN_VIEW'
 export const TOGGLE_MESSAGES_IN_VIEW = 'TOGGLE_MESSAGES_IN_VIEW'

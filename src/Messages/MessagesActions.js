@@ -51,6 +51,7 @@ export const messagesEpic = action$ =>
     .mergeMap(action => {
       const chatSocket = getSocket('chat')
       const connect$ = socketToStream(chatSocket, 'connect')
+
       return connect$
         .do(res => chatSocket.emit('join'))
         .map(res => ({ type: MESSAGES_CONNECT, payload: chatSocket }))
@@ -101,6 +102,7 @@ export const broadcastMessageEpic = action$ =>
   action$.ofType(BROADCAST_MESSAGE)
     .do(action => {
       const { socket, channelId, message, cb } = action.payload
+
       socket.emit('newMessage', channelId, { text: message }, cb)
     })
     .map(action => ({ type: BROADCAST_MESSAGE_SUCCESS, payload: action.payload }))

@@ -7,6 +7,7 @@ import ForgotPasswordForm from './ForgotPasswordForm'
 const ForgotPassword = (props) => {
   const handleForgotPassword = formData => {
     const { requestForgotPassword } = props.actions
+
     requestForgotPassword(formData)
   }
 

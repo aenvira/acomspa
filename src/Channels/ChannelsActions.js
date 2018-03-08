@@ -34,6 +34,7 @@ export const channelsEpic = action$ =>
     .mergeMap(action => {
       const channelsSocket = getSocket('channels')
       const connect$ = socketToStream(channelsSocket, 'connect')
+
       return connect$
         .do(res => channelsSocket.emit('loadInitialChannels'))
         .map(res => ({ type: CHANNELS_CONNECT, payload: channelsSocket }))

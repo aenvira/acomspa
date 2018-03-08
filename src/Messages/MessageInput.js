@@ -26,6 +26,7 @@ class MessageInput extends React.Component {
   onSubmit = event => {
     event.preventDefault()
     this.props.onSubmit({ message: this.state.message })
+    this.setState(prev => ({ message: '' }))
   }
 
   render() {

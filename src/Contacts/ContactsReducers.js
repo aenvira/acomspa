@@ -9,7 +9,7 @@ import {
 } from './ContactsActions'
 
 export const contacts = (state = [], { type, payload }) => {
-  switch(type) {
+  switch (type) {
     case FETCH_CONTACTS_REQ:
       return state
     case FETCH_CONTACTS_FAILED:
@@ -22,11 +22,11 @@ export const contacts = (state = [], { type, payload }) => {
   }
 }
 
-export const allusers = (state =[], { type, payload }) => {
-  switch(type) {
+export const allusers = (state = [], { type, payload }) => {
+  switch (type) {
     case USERS_REQ:
       return state
-    case USERS_FAILED: 
+    case USERS_FAILED:
       return state
     case USERS_SUCCESS:
       return payload.users

@@ -29,7 +29,7 @@ export const messages = (state = [], { type, payload }) => {
     case INITIAL_MESSAGES_SUCCESS:
       return payload.messages
     case MESSAGE_RECEIVED:
-      return [...state, payload.message]
+      return [ ...state, payload.message ]
     default:
       return state
   }

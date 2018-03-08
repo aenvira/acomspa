@@ -84,16 +84,19 @@ class Messages extends React.Component {
 
   render() {
     const { channel, currentUser, channelsInView, messages } = this.props
+    console.log('channel', channel)
 
     const { height } = this.state
     return (
       <div className='flex flex-column'>
-        <ChannelBar
+      { channel._id
+        && <ChannelBar
           channel={channel}
           channelsInView={channelsInView}
           switchToChannels={this.switchViewToChannels}
           currentUser={currentUser}
-        />
+          />
+      }
         <div
           style={{
             background: `url(${bkg})`,
@@ -114,8 +117,8 @@ class Messages extends React.Component {
             </div>
           </div>
         </div>
-        <div className='bg-white' style={{ height: '50px'}}>
-          <MessageInput onSubmit={this.broadcast}/>
+        <div className='' style={{ height: '30px'}}>
+        { channel._id && <MessageInput onSubmit={this.broadcast}/> }
         </div>
       </div>
     )

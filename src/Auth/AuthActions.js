@@ -56,7 +56,7 @@ export const registerEpic = action$ =>
     )
 
 export const logout = () => ({ type: LOGOUT_REQ })
-export const logoutEpic = action$ => 
+export const logoutEpic = action$ =>
   action$.ofType(LOGOUT_REQ)
     .do(action => removeLocalToken())
     .map(action => ({
@@ -69,9 +69,9 @@ export const logoutEpic = action$ =>
     }))
 
 export const requestForgotPassword = data => ({ type: FORGOT_PASSWORD_REQ, payload: data })
-export const requestForgotPasswordEpic = action$ => 
+export const requestForgotPasswordEpic = action$ =>
   action$.ofType(FORGOT_PASSWORD_REQ)
-    .mergeMap(action => 
+    .mergeMap(action =>
       forgotPassword(action.payload)
         .map(res => ({
           type: FORGOT_PASSWORD_SUCCESS,
@@ -85,9 +85,9 @@ export const requestForgotPasswordEpic = action$ =>
     )
 
 export const requestResetPassword = data => ({ type: RESET_PASSWORD_REQ, payload: data })
-export const requestResetPasswordEpic = action$ => 
+export const requestResetPasswordEpic = action$ =>
   action$.ofType(RESET_PASSWORD_REQ)
-    .mergeMap(action => 
+    .mergeMap(action =>
       resetPassword(action.payload)
         .map(res => ({
           type: RESET_PASSWORD_SUCCESS,

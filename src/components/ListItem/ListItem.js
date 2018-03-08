@@ -8,10 +8,10 @@ const ListItem = props => {
     <li
       className={
         item.hasUnreadMessages
-        ? 'br bw2 b--green'
-        : ''
+          ? 'br bw2 b--green'
+          : ''
       }
-      onClick={e => config.onClick(item)}
+      onClick={_ => config.onClick(item)}
     >
       <div className='flex items-center lh-copy ph0-l dim pointer'>
         <div className='pa3'>

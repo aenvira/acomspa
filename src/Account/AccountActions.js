@@ -18,5 +18,5 @@ export const profileEpic = action$ =>
           type: PROFILE_FAILED,
           payload: error,
           error: true
-        }) )
+        }))
     )

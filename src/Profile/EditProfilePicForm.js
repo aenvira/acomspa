@@ -16,26 +16,27 @@ const defaultAvatars = [
 
 const getRandomAvatar = (avatars) => {
   const rand = Math.floor(Math.random() * (avatars.length))
-  console.log('rand', rand)
+
   return avatars[rand]
 }
 
 const ImageUpload = props => {
   const { user } = props
+
   return (
     <div className='image-upload w-100 flex justify-center pa2'>
-        <label for='file-input'>
-            <img 
-              src={ user.avatar ? `${user.avatar}` : `${getRandomAvatar(defaultAvatars)}` }
-              className='pointer br-100 dim' style={{ width: '200px', height: '200px' }}
-            />
+      <label for='file-input'>
+        <img
+          src={ user.avatar ? `${user.avatar}` : `${getRandomAvatar(defaultAvatars)}` }
+          className='pointer br-100 dim' style={{ width: '200px', height: '200px' }}
+        />
         <div className='middle pa2 f6 flex flex-column light-gray pointer'>
           <i className='fa fa-camera fa-2x'></i>
           <div className=''>CHANGE PROFILE PHOTO</div>
         </div>
 
-        </label>
-        <input id='file-input' type='file' className='dn'/>
+      </label>
+      <input id='file-input' type='file' className='dn'/>
     </div>
   )
 }

@@ -4,14 +4,15 @@ import { Avatar } from '../components/Avatars/Avatars'
 
 const AccountSettings = props => {
   const { user } = props
+
   return (
     <div>
       <div className='flex bg-light-gray'>
         <Route path='/chat/account' render={props => (
-              <Link to='/chat' className='link dark-blue pa3'>
-                <i className='fa fa-arrow-left'></i>
-              </Link>
-            )}
+          <Link to='/chat' className='link dark-blue pa3'>
+            <i className='fa fa-arrow-left'></i>
+          </Link>
+        )}
         />
         <h4 className='f4 pa3 dark-blue'>Settings</h4>
       </div>

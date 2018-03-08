@@ -5,7 +5,7 @@ import EditProfilePicForm from './EditProfilePicForm'
 const EditProfile = props => {
   const { currentUser } = props
   const handleProfilePicEdit = data => {
-    console.log(data)
+  //    console.log(data)
   }
 
   return (

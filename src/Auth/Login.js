@@ -20,17 +20,19 @@ class Login extends React.Component {
   }
 
   render () {
-    //const { redirectToReferrer } = this.state
     const { isAuthenticated, token } = this.props
-    console.log('token is: ', token)
-    if (isAuthenticated) {
-      return (
-        <Redirect to={'/chat'}/>
-      )
-    }
-    return (
-      <LoginForm onSubmit={this.handleLogin} token={token}/>
-    )
+
+    return isAuthenticated
+      ? <Redirect to={'/chat'}/>
+      : <LoginForm onSubmit={this.handleLogin} token={token}/>
+    //if (isAuthenticated) {
+    //  return (
+    //    <Redirect to={'/chat'}/>
+    //  )
+    //}
+    //return (
+    //  <LoginForm onSubmit={this.handleLogin} token={token}/>
+    //)
   }
 }
 
