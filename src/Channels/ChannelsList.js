@@ -7,7 +7,7 @@ const ChannelsList = props => {
 
   return (
     <div className='overflow-hidden' style={{ height: `${window.innerHeight - 60}px` }}>
-      <SearchBar/>
+      {/* <SearchBar/> */}
       <div className='bg-light-gray overflow-scroll h-100'>
         <h4 className='f4 pa3 dark-blue'>Chats</h4>
         <ul className='list pl0 mt0 measure center'>

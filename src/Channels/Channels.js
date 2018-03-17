@@ -10,7 +10,6 @@ import {
 import AddChannel from '../Channels/AddChannel'
 import ChannelsList from './ChannelsList'
 import Contacts from '../Contacts/Contacts'
-
 //import { getLocalToken } from '../client/api'
 //import getSocket from '../socket'
 import {
@@ -18,7 +17,6 @@ import {
   resetUnreadMessages,
   setSelectedChannel
 } from './ChannelsActions'
-
 import { toggleMessagesInView, toggleChannelsInView } from '../Main/MainActions'
 //let socket
 //let token
@@ -33,6 +31,7 @@ class Channel extends React.Component {
 
   createChannel = channelName => {
     const { socket } = this.props
+
     socket.emit('createChannel', channelName)
   }
 
@@ -42,6 +41,7 @@ class Channel extends React.Component {
   selectChannel = ({ channel }) => {
     const { actions } = this.props
     const { resetUnreadMessages, setSelectedChannel, toggleMessagesInView, toggleChannelsInView } = actions
+
     resetUnreadMessages(channel._id)
     setSelectedChannel(channel)
     toggleChannelsInView(false)
@@ -50,10 +50,9 @@ class Channel extends React.Component {
 
   render() {
     const { channels, latestMessages, selectedChannel, currentUser } = this.props
-    console.log(latestMessages)
+
     return (
       <div className='h-100'>
-        
         { (channels.length !== 0) &&
           <ChannelsList
             selectedChannel={selectedChannel}

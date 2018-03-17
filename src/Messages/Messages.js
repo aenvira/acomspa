@@ -70,8 +70,10 @@ class Messages extends React.Component {
   }
 
   confirmMessage = res => {
-    if(res.error) return console.log(res.error)
-    console.log('Message confirmed!', res)
+    if(res.error) {
+      return console.log(res.error)
+    }
+    return console.log('Message confirmed!', res)
   }
 
   switchViewToChannels = () => {
@@ -84,9 +86,8 @@ class Messages extends React.Component {
 
   render() {
     const { channel, currentUser, channelsInView, messages } = this.props
-    console.log('channel', channel)
-
     const { height } = this.state
+
     return (
       <div className='flex flex-column'>
       { channel._id

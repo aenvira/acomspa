@@ -29,9 +29,9 @@ const ProfileBar = props => {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <RoundIconButton icon='ellipsis-v'/>
-      </div>
+      </div> */}
     </div>
   )
 }
